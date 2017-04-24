@@ -1,0 +1,462 @@
+@import 'mixin/mixins', 'mixin/variables', 'mixin/normalize'
+@import '../css/font'
+// , '../css/bootstrap-grid'
+// @import '../libs/owl.carousel/dist/assets/owl.carousel.min.css'
+// @import '../libs/owl.carousel/dist/assets/owl.theme.default.min.css'
+
+
+body
+	font-size: 100%
+	box-sizing: border-box
+	font-family: $ff-os-regular
+
+a, a:active, a:link
+	outline: none
+
+.img
+	max-width: 100%
+	height: auto
+
+.row > div
+	box-sizing: border-box
+
+.bx-wrapper
+	border: none
+	box-shadow: none
+	background: transparent
+	margin-bottom: 0
+
+@mixin transition
+	transition: all .3s ease
+
+@media screen and (min-width: 1550px)
+	.container
+		width: 100% !important
+		max-width: 1370px !important
+
+.invis
+	visibility: hidden !important
+
+.top
+	background: #f5f5f5
+
+.social
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	align-items: center
+	line-height: 35px
+	.social-left a, .social-right a, .social-right span
+		color: $grey
+		text-decoration: none
+	.social-left a, .social-right span
+		font-style: italic
+	.social-left, .social-right
+		li
+			position: relative
+			display: inline-block
+	.social-left
+		a.tel, a.email
+			padding-left: 20px
+			margin-right: 20px
+			@include transition
+			&:hover
+				color: $brown
+			&:before
+				font-family: fontawesome
+				position: absolute
+				top: 0
+				left: -3px
+				font-style: normal
+		a.tel:before
+			content: '\f095'
+		a.email:before
+			content: '\f0e0'
+	.social-right 
+		span, a
+			margin: 0 5px
+		span
+			margin-right: 15px
+			user-select: none
+		a.ico
+			display: block
+			width: 29px
+			line-height: 29px
+			height: 29px
+			color: #fff
+			text-align: center
+			font-size: 20px
+			background: #c2c2c2
+			border-radius: 50%
+			@include transition
+			&:hover
+				background: $brown
+
+.menu
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	align-items: center
+	box-sizing: border-box
+	margin-bottom: 10px
+	// padding: 0 30px
+	nav
+		@media screen and (min-width: 991px)
+			padding-top: 35px
+		li
+			display: inline-block
+			a
+				color: $brown
+				text-decoration: none
+				text-transform: uppercase
+				box-sizing: border-box
+				@include fontsize(19)
+		&.left-menu
+			ul 
+				li 
+					a
+					padding: 0 5vw
+					&:first-child
+						padding-left: 0
+		&.right-menu
+			ul 
+				li a
+					padding: 0 5vw
+					&:last-child
+						padding-right: 0
+	.logo
+		img
+			width: 100%
+			max-width: 380px
+			height: auto
+	@media screen and (max-width: 991px)
+		flex-direction: column
+		nav
+			display: inline-block
+		.left-menu
+			order: 2
+		.right-menu
+			order: 3
+		.logo-box
+			order: 1
+
+.slider-box
+	position: relative
+	img
+		margin: 0 auto
+		display: block
+	.bx-pager.bx-default-pager
+		position: absolute
+		bottom: 20px
+		left: 0
+		right: 0
+		.bx-pager-item a
+			border-radius: 50px
+			background: #fff
+			box-shadow: inset 0 2px 2px rgba($grey,.5)
+			border: 2px solid rgba($grey,.1)
+			opacity: 1
+			box-sizing: border-box
+			height: 20px
+			width: 20px
+		.bx-pager-item a.active
+			position: relative
+			opacity: 1
+			&:before
+				content: ''
+				position: absolute
+				top: 25%
+				// margin-top: -5px
+				left: 0
+				right: 0
+				margin: 0 auto
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				background: $brown
+			// background: rgba($brown, .7)
+			// box-shadow: none
+
+.h1-buny
+	text-align: center
+	color: $brown
+.hunybuny-box
+	.hb-inner
+		max-width: 900px
+		margin: 0 auto
+	.h1-buny
+		@include fontsize(40)
+		&:after
+			content: ' - це...'
+	.p-buny
+		margin-top: 15px
+		text-align: center
+		color: $grey
+		@include fontsize(20)
+		font-family: $ff-os-light
+.hunybuny-desc
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	align-items: center
+	margin: 80px auto
+	position: relative
+	&:after
+		transition: all 4s ease
+		content: ""
+		display: block
+		background-image: url("../img/bg-desc.png")
+		background-repeat: no-repeat
+		background-position: center 0
+		opacity: 0
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		position: absolute
+		z-index: -1
+	&.show-bgi:after
+		opacity: 1
+	&>div
+		width: 50%
+		&>div
+			position: relative
+			&:after
+				position: absolute
+				top: -5px	
+	.hp-item
+		max-width: 340px
+		height: 200px
+		box-sizing: border-box
+		.h2-buny
+			color: #000
+			line-height: 28px
+			font-family: $ff-os-bold
+			@include fontsize(23)
+		p.desc
+			color: $grey
+			font-family: $ff-os-light
+			@include fontsize(17)
+	.hp-col-1
+		.hp-item
+			padding-right: 60px
+			float: left
+			text-align: right
+			&.col-item1:after
+				content: url('../img/020.png')
+			&.col-item2
+				animation-delay: .25s
+				&:after
+					content: url('../img/021.png')
+			&.col-item3
+				animation-delay: .5s
+				&:after
+					content: url('../img/022.png')
+		&>div:after
+			right: -20px
+	.hp-col-2
+		.hp-item
+			padding-left: 60px
+			float: right
+			text-align: left
+			&.col-item1:after
+				content: url('../img/023.png')
+			&.col-item2
+				animation-delay: .25s
+				&:after
+					content: url('../img/024.png')
+			&.col-item3
+				animation-delay: .5s
+				&:after
+					content: url('../img/025.png')
+		&>div:after
+			left: -20px
+
+.shop-box
+
+.shop-desc
+	.h1-buny
+		@include fontsize(30)
+		margin-bottom: 15px
+	.p-shop
+		text-align: center
+		color: $grey
+		font-size: 19px
+		line-height: 30px
+		b
+			color: $brown
+			font-family: $ff-os-bold
+
+.shop-inner
+	margin: 80px auto 50px auto
+	.shop-item
+		position: relative
+		max-width: 365px
+		height: 345px
+		overflow: hidden
+		margin: 0 auto 80px auto
+		box-sizing: border-box
+		padding: 0 15px
+		text-align: center
+		color: #929292
+		z-index: 2
+		&:before
+		    content: ''
+		    background: #fff
+		    display: block
+		    height: 30px
+		    position: absolute
+		    left: 0
+		    right: 0
+		    bottom: 0
+		    z-index: 3
+		&:hover 
+			overflow: visible
+			z-index: 5
+			.shop-item-inner
+				overflow: visible
+				.item-name
+					color: #000
+					span.b
+						font-family: $ff-os-bold
+		.shop-item-inner
+			overflow: hidden
+			height: 100%
+		.item-init
+			position: absolute
+			z-index: 10
+			background-color: #fff
+			border-radius: 5px
+			min-height: 32.5em
+			left: -17px
+			top: -12px
+			right: 0
+			img
+				margin: 20px auto
+				display: block
+			p.item-desc
+				color: #929292
+				font-size: 13px
+				margin: 15px auto 25px
+			&:hover
+				box-shadow: 0 0 10px rgba(0,0,0,.15)
+			.item-name
+				line-height: 24px
+			.desc-box
+				z-index: 5
+				padding: 0 15px
+				.btn-offet
+					padding: 7px 30px
+					border: 2px solid transparent
+					background: $brown
+					border-radius: 6px
+					font-size: 16px
+					color: #fff
+					text-decoration: none
+					@include transition
+					&:hover
+						text-decoration: none
+						border-color: $brown
+						background: #fff
+						color: $brown
+
+.delay025
+	animation-delay: .25s
+.delay035
+	animation-delay: .35s
+.delay045
+	animation-delay: .45s
+	
+.gift-box
+	text-align: center
+	margin-bottom: 15px
+	.h2-gift
+		@include fontsize(38)
+		margin-bottom: 25px
+	.p-gift
+		color: #000
+		font-family: $ff-os-light
+		@include fontsize(22)
+.gift-item
+	text-align: center
+	max-width: 300px
+	height: 350px
+	margin: 0 auto
+	.gift-img-box img
+		margin: 0 auto 15px
+		display: block
+	.gift-name
+		margin-bottom: 20px
+		font-family: $ff-os-bold
+		@include fontsize(22)
+	.gift-desc
+		color: $grey
+		font-family: $ff-os-light
+		@include fontsize(17)
+
+.offer-now
+	margin-top: 30px
+	text-align: center
+	.offer-text
+		max-width: 700px
+		margin: 0 auto
+		font-size: 23px
+		font-family: $ff-os-light
+		b
+			font-family: $ff-os-bold
+			text-transform: uppercase
+	.offer-now-link
+		box-sizing: border-box
+		width: 100%
+		max-width: 395px
+		margin: 40px auto
+		color: $brown
+		border: 2px solid $orange
+		background: $orange
+		padding: 11px 10px
+		border-radius: 50px
+		text-decoration: none
+		@include fontsize(30)
+		display: block
+		@include transition
+		&:hover
+			text-decoration: none
+			background: #fff
+
+.slider-contact
+	background: $pink-light
+	padding: 30px 0
+	.bx-pager
+		display: none
+	.h2-see
+		max-width: 750px
+		margin: 0 auto
+		text-align: center
+		@include fontsize(45)
+		font-family: $ff-os-light
+	.slide-gallery
+		margin: 20px auto
+		max-width: 1230px
+		.slide-box
+			height: 780px
+			overflow: hidden
+			display: flex
+			justify-content: center
+			flex-flow: row wrap
+			.col-1,.col-2
+				float: left
+				width: 50%
+				padding: 2px
+				box-sizing: border-box
+			.col-1
+				img
+					width: 100%
+			.col-2
+				display: flex
+				justify-content: space-between
+				flex-flow: column wrap
+				align-items: stretch
+				img
+					padding: 4px
+					height: 50%
+
