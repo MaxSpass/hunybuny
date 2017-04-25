@@ -186,6 +186,7 @@ a, a:active, a:link
 		margin: 0 auto
 	.h1-buny
 		@include fontsize(40)
+		margin-top: 50px
 		&:after
 			content: ' - це...'
 	.p-buny
@@ -347,18 +348,30 @@ a, a:active, a:link
 				padding: 0 15px
 				.btn-offet
 					padding: 7px 30px
-					border: 2px solid transparent
-					background: $brown
 					border-radius: 6px
-					font-size: 16px
-					color: #fff
+					border: 2px solid
 					text-decoration: none
 					@include transition
+					font-size: 16px
 					&:hover
 						text-decoration: none
-						border-color: $brown
+					&.cool
+						background: $brown
+						border-color: transparent
+						color: #fff
+						&:hover
+							border-color: $brown
+							background: #fff
+							color: $brown
+					&.sux
 						background: #fff
-						color: $brown
+						border-color: #eaeaea
+						color: #000
+						// &:hover
+						// 	border-color: $brown
+						// 	background: #fff
+						// 	color: $brown
+
 
 .delay025
 	animation-delay: .25s
