@@ -20,36 +20,36 @@ $(document).ready(function(){
 	$('.hp-col-1 .hp-item').viewportChecker({
 		classToRemove: 'invis',
 		classToAdd: 'animated fadeInRight',
-		offset: 100
+		offset: 50
 	});
 
 	$('.hp-col-2 .hp-item').viewportChecker({
 		classToRemove: 'invis',
 		classToAdd: 'animated fadeInLeft',
-		offset: 100
+		offset: 50
 	});
 
 	$('.hunybuny-desc').viewportChecker({
 		classToAdd: 'show-bgi',
-		offset: 100
+		offset: 50
 	})
 
 	$('.shop-item').viewportChecker({
 		classToRemove: 'invis',
 		classToAdd: 'animated zoomIn',
-		offset: 100
+		offset: 50
 	})
 
 	$('.gift-box').viewportChecker({
 		classToRemove: 'invis',
 		classToAdd: 'animated zoomIn',
-		offset: 100
+		offset: 50
 	})
 
 	$('.gift-item').viewportChecker({
 		classToRemove: 'invis',
 		classToAdd: 'animated slideInUp',
-		offset: 100
+		offset: 50
 	})
 
 	$('.slide-box img').each(function(){

@@ -46,6 +46,7 @@ a, a:active, a:link
 	justify-content: space-between
 	align-items: center
 	line-height: 35px
+	font-family: $ff-os-sbold
 	.social-left a, .social-right a, .social-right span
 		color: $grey
 		text-decoration: none
@@ -111,17 +112,19 @@ a, a:active, a:link
 				text-transform: uppercase
 				box-sizing: border-box
 				@include fontsize(19)
+				font-family: $ff-os-regular
+				&:hover
+					text-decoration: underline
 		&.left-menu
 			ul 
-				li 
-					a
-					padding: 0 5vw
+				li
+					padding: 0 4vw
 					&:first-child
 						padding-left: 0
 		&.right-menu
 			ul 
-				li a
-					padding: 0 5vw
+				li
+					padding: 0 4vw
 					&:last-child
 						padding-right: 0
 	.logo
@@ -186,6 +189,7 @@ a, a:active, a:link
 		margin: 0 auto
 	.h1-buny
 		@include fontsize(40)
+		margin-top: 50px
 		&:after
 			content: ' - це...'
 	.p-buny
@@ -237,7 +241,12 @@ a, a:active, a:link
 			color: $grey
 			font-family: $ff-os-light
 			@include fontsize(17)
+	.hp-col-1,.hp-col-2
+		display: flex
+		flex-flow: column wrap
+		justify-content: space-between
 	.hp-col-1
+		align-items: flex-start
 		.hp-item
 			padding-right: 60px
 			float: left
@@ -255,6 +264,7 @@ a, a:active, a:link
 		&>div:after
 			right: -20px
 	.hp-col-2
+		align-items: flex-end
 		.hp-item
 			padding-left: 60px
 			float: right
@@ -283,6 +293,7 @@ a, a:active, a:link
 		color: $grey
 		font-size: 19px
 		line-height: 30px
+		font-family: $ff-os-light
 		b
 			color: $brown
 			font-family: $ff-os-bold
@@ -345,7 +356,7 @@ a, a:active, a:link
 			.desc-box
 				z-index: 5
 				padding: 0 15px
-				.btn-offet
+				.btn-offer
 					padding: 7px 30px
 					border-radius: 6px
 					border: 2px solid
@@ -416,7 +427,7 @@ a, a:active, a:link
 		box-sizing: border-box
 		width: 100%
 		max-width: 395px
-		margin: 40px auto
+		margin: 60px auto
 		color: $brown
 		border: 2px solid $orange
 		background: $orange
@@ -433,6 +444,8 @@ a, a:active, a:link
 .slider-contact
 	background: $pink-light
 	padding: 30px 0
+	.container
+		max-width: 1200px !important
 	.bx-pager
 		display: none
 	.h2-see
@@ -442,7 +455,7 @@ a, a:active, a:link
 		@include fontsize(45)
 		font-family: $ff-os-light
 	.slide-gallery
-		margin: 20px auto
+		margin: 50px auto
 		max-width: 1230px
 		.slide-box
 			height: 780px
@@ -467,3 +480,107 @@ a, a:active, a:link
 					padding: 4px
 					height: 50%
 
+.contact-footer
+	background: #fff
+	padding: 50px 0
+	text-align: center
+	.p-contact
+		color: $brown
+		line-height: 36px
+		font-family: $ff-os-sbold
+		@include fontsize(35)
+	.contacts-box
+		display: flex
+		flex-flow: row wrap
+		justify-content: center
+		align-items: center
+		width: 100%
+		max-width: 750px
+		margin: 30px auto 0
+		height: 450px
+		background-image: url("../img/013.png")
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		.contacts-inner
+			a
+				position: relative
+				color: #000
+				display: block
+				line-height: 40px
+				text-decoration: none
+				font-family: $ff-os-sbold
+				@include fontsize(32)
+				&:hover
+					text-decoration: underline
+				&:first-child:before
+					position: absolute
+					vertical-align: middle
+					left: -35px
+					content: '\f095'
+					font-family: fontawesome
+address
+	font-style: normal
+
+.footer
+	background: #000
+	color: #fff
+	padding: 25px 0 35px
+
+.footer-box
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	&>div
+		box-sizing: border-box
+		padding: 10px
+	.footer-col-1
+		width: 36%
+		.social-inner, .bee
+			display: inline-block
+			vertical-align: bottom
+		.social-inner
+			li
+				display: inline-block
+				line-height: 50px
+				vertical-align: middle
+				text-align: center
+				margin-right: 10px
+				a.ico
+					color: #fff
+					display: block
+					text-decoration: none
+					&:before
+						display: block
+						border: 3px solid #fff
+						width: 30px
+						height: 30px
+						line-height: 30px
+						font-family: fontawesome
+						font-size: 22px
+						text-align: center
+						transition: all .3s ease
+					&:hover:before
+						color: darken($orange,10%)
+						border-color: darken($orange,10%)
+				a.ico-vk:before
+					content: '\f189'
+				a.ico-inst:before
+					content: '\f16d'
+					border: none
+					width: 35px
+					font-size: 42px
+				a.ico-fb:before
+					content: '\f09a'
+		.bee
+			width: 170px
+			height: 42px
+			background-image: url("../img/bee.png")
+			background-repeat: no-repeat
+			background-size: cover
+			display: inline-block
+
+	.footer-col-2
+		width: 25%
+	.footer-col-3
+		width: 39%
