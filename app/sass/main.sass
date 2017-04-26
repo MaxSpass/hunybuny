@@ -347,18 +347,25 @@ a, a:active, a:link
 				padding: 0 15px
 				.btn-offet
 					padding: 7px 30px
-					border: 2px solid transparent
-					background: $brown
 					border-radius: 6px
-					font-size: 16px
-					color: #fff
+					border: 2px solid
 					text-decoration: none
 					@include transition
+					font-size: 16px
 					&:hover
 						text-decoration: none
-						border-color: $brown
+					&.dark
+						background: $brown
+						border-color: transparent
+						color: #fff
+						&:hover
+							border-color: $brown
+							background: #fff
+							color: $brown
+					&.light
 						background: #fff
-						color: $brown
+						border-color: #eaeaea
+						color: #000
 
 .delay025
 	animation-delay: .25s
